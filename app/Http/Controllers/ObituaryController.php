@@ -77,8 +77,7 @@ class ObituaryController extends Controller
         if($Comment->rules){
             $validator = Validator::make($request->all(), $rules);
             if ($validator->fails()) {
-                // $backAwards = Awards::paginate(10);
-                // return view("AwardsView::Awardsajax")->withErrors($validator)->with(['Awards'=>$backAwards,'tab'=>2,'editAwards'=>$request->all()]);
+               return false;
             }
         }
         
@@ -119,8 +118,7 @@ class ObituaryController extends Controller
         if($Comment->rules){
             $validator = Validator::make($request->all(), $rules);
             if ($validator->fails()) {
-                // $backAwards = Awards::paginate(10);
-                // return view("AwardsView::Awardsajax")->withErrors($validator)->with(['Awards'=>$backAwards,'tab'=>2,'editAwards'=>$request->all()]);
+                return false;
             }
         }
 
