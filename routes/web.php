@@ -19,5 +19,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+// Server side 
 Route::get('/home', 'PostController@index')->name('posts.index');
 Route::get('/posts/{post}', 'PostController@showpost')->name('posts.showpost');
+
+// Vue
+Route::get('/obituary', 'ObituaryController@index')->name('obituary.index');
+Route::get('/obituary/{post}', 'ObituaryController@show')->name('obituary.show');

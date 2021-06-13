@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 
-class PostController extends Controller
+class ObituaryController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -25,7 +25,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::where('active_status', 1)->get();
-        return view('posts.index', [
+        return view('obituary.index', [
             'posts' => $posts
         ]);
     }
@@ -36,8 +36,8 @@ class PostController extends Controller
      * @param \App\Post
      * @return \illuminate\Http\Response
      */
-    public function showpost(Post $post) {
-        return view('posts.showpost', [
+    public function show(Post $post) {
+        return view('obituary.show', [
             'post' => $post,
         ]);
     }

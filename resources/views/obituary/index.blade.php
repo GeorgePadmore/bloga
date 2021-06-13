@@ -1,9 +1,9 @@
-@extends('layouts.custom_app')
+@extends('layouts.app')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-10">
+        <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Posts') }}</div>
 
@@ -14,17 +14,13 @@
                         </div>
                     @endif
 
-                   {{-- {{ __('You are logged in!') }} --}}
+                    <!-- {{ __('You are logged in!') }} -->
 
-                   <img src="{{ asset('images/jj_rawlings.png') }}" alt="{{$post->title}}" style="width: 100%">
-                    <h2>{{$post->title}}</h2>
-                    <p>{{ $post->desc }}</p>
-
-
-                    <div>
-                        @comments(['model' => $post, 'approved' => true])
-
-                    </div>
+                    <ul class="tasks-list">
+                        @foreach ($posts as $posts)
+                            <li class="task-item"><a href="obituary/{{ $posts->id }}">{{ $posts->title }}</a> </li>
+                        @endforeach
+                    </ul>
 
                 </div>
             </div>
