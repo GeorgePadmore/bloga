@@ -25,7 +25,6 @@ class HomeController extends Controller
     public function index()
     {
         $posts = Post::where('active_status', 1)->get();
-        // dd($posts);
         return view('home', [
             'posts' => $posts
         ]);

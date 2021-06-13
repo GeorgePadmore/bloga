@@ -14,16 +14,17 @@
                         </div>
                     @endif
 
-                   {{-- {{ __('You are logged in!') }} --}}
-
                    <img src="{{ asset('images/jj_rawlings.png') }}" alt="{{$post->title}}" style="width: 100%">
                     <h2>{{$post->title}}</h2>
                     <p>{{ $post->desc }}</p>
 
-
-                    <div>
-                        @comments(['model' => $post, 'approved' => true])
-
+                    <br><br>
+                    <div class="mb-5">
+                        @if (\Auth::user())
+                            <comments-list :post_id={{$post->id}} :is_admin={{\Auth::user()->id}}></comments-list>
+                        @else
+                            <comments-list :post_id={{$post->id}}></comments-list>
+                        @endif
                     </div>
 
                 </div>

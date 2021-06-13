@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,7 @@ Route::get('/posts/{post}', 'PostController@showpost')->name('posts.showpost');
 // Vue
 Route::get('/obituary', 'ObituaryController@index')->name('obituary.index');
 Route::get('/obituary/{post}', 'ObituaryController@show')->name('obituary.show');
+
+Route::get('/obituary/{post}/comments', 'ObituaryController@showVue')->name('obituary.show');
+Route::post('/obituary/saveCondolence', 'ObituaryController@saveCondolence')->name('obituary.show');
+Route::post('/obituary/deleteCondolence', 'ObituaryController@deleteCondolence')->name('obituary.show');

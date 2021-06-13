@@ -14,8 +14,6 @@
                         </div>
                     @endif
 
-                    <!-- {{ __('You are logged in!') }} -->
-
                     <ul class="tasks-list">
                         @foreach ($posts as $posts)
                             <li class="task-item"><a href="obituary/{{ $posts->id }}">{{ $posts->title }}</a> </li>
